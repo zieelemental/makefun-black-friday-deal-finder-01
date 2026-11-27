@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DealSleuth — Real Black Friday Deals, Checked 27 Nov 2026</title>
+    <meta
+      name="description"
+      content="49 real Black Friday deals checked on 27 Nov 2026, with sale price, usual price, discount, store link and a verdict on whether each one is really a deal."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">🔍</span>
+          <div>
+            <h1 class="brand-name">DealSleuth</h1>
+            <p class="brand-tag">Real Black Friday deals. Checked, not guessed.</p>
+          </div>
+        </div>
+        <p class="header-note" id="checked-label">Prices checked 27 Nov 2026, 09:50 UTC</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="intro" id="intro" aria-label="About this finder">
+        <h2>Every deal checked today, with the math shown</h2>
+        <p>
+          49 deals from 12 stores, each with its sale price, usual price,
+          discount and a link to the store. Every price was read from a named
+          deals source on Black Friday, 27 November 2026 — the source is
+          listed on each deal. A verdict badge tells you whether it is
+          genuinely good: <strong>New low</strong> means the source says it
+          is the lowest price yet, <strong>Strong deal</strong> is 40% off or
+          more, <strong>Good deal</strong> is 25–39% off, and
+          <strong>Routine sale</strong> is under 25% off.
+        </p>
+      </section>
+
+      <section class="stats" id="stats" aria-label="Deal summary"></section>
+
+      <section class="controls" id="controls" aria-label="Search and filter deals">
+        <label class="search-label" for="search">
+          <span class="visually-hidden">Search deals</span>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search a product, store or category…"
+            autocomplete="off"
+          />
+        </label>
+        <div class="select-row">
+          <label class="select-label" for="store">Store
+            <select id="store"></select>
+          </label>
+          <label class="select-label" for="min">Discount
+            <select id="min"></select>
+          </label>
+          <label class="select-label" for="sort">Sort
+            <select id="sort"></select>
+          </label>
+        </div>
+        <div class="chips" id="chips" aria-label="Filter by category"></div>
+        <p class="result-count" id="result-count" aria-live="polite"></p>
+      </section>
+
+      <section id="list-view" aria-label="Deals">
+        <div class="grid" id="grid"></div>
+      </section>
+
+      <section id="detail-view" aria-label="Deal detail" hidden></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <h2>How the deals were checked</h2>
+        <p>
+          Prices were read on 27 November 2026 (Black Friday) from published
+          deal round-ups that name the store and both prices: CNN
+          Underscored's live Black Friday list, Tom's Guide's Apple deals,
+          TradingView / Benzinga's tech deals and USA Today's live sales.
+          Each deal card names its source. Discount = (usual price − sale
+          price) ÷ usual price. A <strong>New low</strong> verdict is used
+          only when the source states an all-time or new low price; the other
+          verdicts follow the discount: Strong 40%+, Good 25–39%, Routine
+          under 25%.
+        </p>
+        <p>
+          Deals whose source did not show both prices were left out rather
+          than guessed. Prices change during Black Friday — confirm the price
+          at the store before buying. DealSleuth is not affiliated with any
+          store listed here.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="deals.js"></script>
+    <script type="module" src="filters.js"></script>
+    <script type="module" src="render.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
