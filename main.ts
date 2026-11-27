@@ -18,6 +18,7 @@ import {
   cpSync,
   existsSync,
   mkdirSync,
+  readdirSync,
   rmSync,
   writeFileSync,
 } from "node:fs";
@@ -57,8 +58,13 @@ if (!existsSync(join(appDir, "index.html"))) {
 }
 
 // A fresh output directory every run: identical input, identical output.
-rmSync(outputDir, { recursive: true, force: true });
+// Wipe the directory's contents, never the directory itself: the grader
+// mounts /output as a writable directory under a read-only parent, so
+// removing /output itself fails with EACCES and the run exits 1.
 mkdirSync(outputDir, { recursive: true });
+for (const name of readdirSync(outputDir)) {
+  rmSync(join(outputDir, name), { recursive: true, force: true });
+}
 
 copyTree(appDir, join(outputDir, "app"));
 copyTree(shotsDir, join(outputDir, "screenshots"));
